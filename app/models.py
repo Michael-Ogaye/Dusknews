@@ -1,9 +1,8 @@
-from typing_extensions import Self
-
 
 class Source:
-    def __init__(self,name, description,language,country,category,url):
+    def __init__(self,id,name, description,language,country,category,url):
         self.name=name
+        self.id=id
         self.category=category
         self.description=description
         self.language=language

@@ -6,4 +6,9 @@
 
 {%block content%}
 <h6 class="text-danger text-center my-4">Dusk news Highlights</h6>
+<ul class="border  rounded">
+{%for p in political%}
+<li class="list-unstyled py-5 border-bottom" >{{p.description}}</li>
+{%endfor%}
+</ul>
 {%endblock%}
