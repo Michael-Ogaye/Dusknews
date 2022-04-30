@@ -1,0 +1,23 @@
+from typing_extensions import Self
+
+
+class Source:
+    def __init__(self,name, description,language,country,category,url):
+        self.name=name
+        self.category=category
+        self.description=description
+        self.language=language
+        self.country=country
+        self.url=url
+
+
+
+class Article:
+    def __init__(self,source, title, author,descrpition, urlimage,publishedAt,content):
+        self.source=source
+        self.title=title
+        self.author=author
+        self.description=descrpition
+        self.urlimage=urlimage
+        self.publishedAt=publishedAt
+        self.content=content
