@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..request import get_sources
+from ..request import get_sources,get_articles
 
 
 # index route
@@ -12,3 +12,10 @@ def index():
     political_sources=get_sources()
 
     return render_template('index.html', title=title, political=political_sources)
+
+@main.route('/articles')
+def articles():
+    title='articles'
+
+    political=get_articles('us','Political')
+    return render_template('articles.html',political)
