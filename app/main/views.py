@@ -17,5 +17,5 @@ def index():
 def articles():
     title='articles'
 
-    political=get_articles('us','Political')
-    return render_template('articles.html',political)
+    political=get_articles()
+    return render_template('articles.html',political=political,title=title)

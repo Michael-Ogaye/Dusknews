@@ -10,7 +10,7 @@ api_key='0264a9c2fe044a6497d9450ca0f12cc2'
 # Getting the movie base url
 # suorl = None
 suorl='https://newsapi.org/v2/top-headlines/sources?apiKey={}&pageSize=10'
-auorl='https://newsapi.org/v2/top-headlines?country={}&category={}&apiKey={}'
+auorl='https://newsapi.org/v2/top-headlines?category=business&apiKey={}'
 
 def configure_request(app):
     
@@ -71,31 +71,34 @@ def process(source_list):
 
 
 #fetching the articles
-def get_articles(country,category):
-    ariclesurl=auorl.format(country,category,api_key)
+def get_articles():
+    ariclesurl=auorl.format(api_key)
     with urllib.request.urlopen(ariclesurl) as url:
         jdata=url.read()
         data= json.loads(jdata)
-        articlesresult=None
+
+        articles_result= None
         if data['articles']:
             aricle_list=data['articles']
-            articles_r=proc(aricle_list)
+            articles_result=proc(aricle_list)
+    return articles_result
 
 
 def proc(lista):
     aricles_result=[] 
     for l in lista:
-        source=l.source
-        title=l.title
-        author=l.author
-        des=l.description
-        content=l.content
-        url= l.url
-        image=l.urlToImage
-        publish=l.publishedAt
+        source=l.get('source')
+        title=l.get('title')
+        author=l.get('author')
+        des=l.get('description')
+        content=l.get('content')
+        url= l.get('url')
+        image=l.get('urlToImage')
+        publish=l.get('publishedAt')
         if source:
             article_object=Article(source,title,author,des,image,publish,content,url)
             aricles_result.append(article_object)
     return aricles_result
+    print(aricles_result)
 
 

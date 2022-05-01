@@ -1,1 +1,20 @@
 {%extends 'base.html'%}
+{%block title%}
+{{title}}
+{%endblock%}
+
+{%block content%}
+<h4 class="text-center my-3 text-primary">News Articles</h6>
+<ul>
+    {%for a in political%}
+    <li>
+        <p><span>{{a.title}}</span></p>
+        <img src="{{a.urlimage}}" alt="pict">
+    </li>
+
+    {%endfor%}
+</ul>
+
+
+
+{%endblock%}
