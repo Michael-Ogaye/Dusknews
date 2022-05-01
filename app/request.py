@@ -10,7 +10,7 @@ api_key='0264a9c2fe044a6497d9450ca0f12cc2'
 # Getting the movie base url
 # suorl = None
 suorl='https://newsapi.org/v2/top-headlines/sources?apiKey={}&pageSize=10'
-auorl='https://newsapi.org/v2/top-headlines?category=business&apiKey={}'
+auorl='https://newsapi.org/v2/top-headlines?country=us&category=business&language=en&apiKey={}'
 
 def configure_request(app):
     

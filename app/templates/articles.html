@@ -7,11 +7,14 @@
 
 <style>
   .maga{
-      width: 50%;
+      width: 75%;
   } 
   
   .un {
       text-decoration: underline;
+  }
+  a{
+      color: purple;
   }
 
 </style>
@@ -22,6 +25,15 @@
     <li class="list-unstyled mb-5 border-bottom mx-auto py-3">
         <p class="un"><span>{{a.title}}</span></p>
         <img class="maga"  src="{{a.urlimage}}" alt="pict">
+        <div class="con mt-4">
+        <p class="px-5"><strong class="text-danger">Content:</strong> <span>{{a.content}}</span></p>
+        </div>
+        <div class="d-flex justify-content-around mt-4">
+            <p><strong class=" me-2">Published:</strong><span class="text-danger">{{a.publishedAt}}</span></p>
+            <p><strong>Author:</strong><span class="text-danger ms-2">{{a.author}}</span></p>
+            <div><a class="text-danger" target="blank" href="{{a.url}}">Read in full</a></div>
+
+        </div>
     </li>
 
     {%endfor%}
