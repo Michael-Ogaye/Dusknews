@@ -8,4 +8,12 @@ body{
     overflow-x: hidden;
     font-family: 'Cormorant', serif;
 }
+.lo a{
+color: navy;
+margin-right: 5%;
+
+}
+.lo{
+    text-align: center;
+}
 
