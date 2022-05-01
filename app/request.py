@@ -76,4 +76,26 @@ def get_articles(country,category):
     with urllib.request.urlopen(ariclesurl) as url:
         jdata=url.read()
         data= json.loads(jdata)
-        
+        articlesresult=None
+        if data['articles']:
+            aricle_list=data['articles']
+            articles_r=proc(aricle_list)
+
+
+def proc(lista):
+    aricles_result=[] 
+    for l in lista:
+        source=l.source
+        title=l.title
+        author=l.author
+        des=l.description
+        content=l.content
+        url= l.url
+        image=l.urlToImage
+        publish=l.publishedAt
+        if source:
+            article_object=Article(source,title,author,des,image,publish,content,url)
+            aricles_result.append(article_object)
+    return aricles_result
+
+
