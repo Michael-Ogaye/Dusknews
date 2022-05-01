@@ -9,7 +9,7 @@ from .models import Source,Article
 api_key='0264a9c2fe044a6497d9450ca0f12cc2'
 # Getting the movie base url
 # suorl = None
-suorl='https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+suorl='https://newsapi.org/v2/top-headlines/sources?apiKey={}&pageSize=10'
 auorl=None
 
 def configure_request(app):
@@ -62,7 +62,7 @@ def process(source_list):
         lang=source.get('language')
         country=source.get('country')
 
-        if id:
+        if lang=="en":
             source_object = Source(id,name,description,lang,country,category,url)
             source_results.append(source_object)
 

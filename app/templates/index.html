@@ -8,7 +8,11 @@
 <h6 class="text-danger text-center my-4">Dusk news Highlights</h6>
 <ul class="border  rounded">
 {%for p in political%}
-<li class="list-unstyled py-5 border-bottom" >{{p.description}}</li>
+<li class="list-unstyled py-5 border-bottom" >
+<h6 class="">Source:<span class="text-danger ms-2">{{p.name}}</span></h6>
+
+<p class="p-5 "><strong class="text-danger">Description:</strong><span class="ms-2">{{p.description}}</span></p>
+</li>
 {%endfor%}
 </ul>
 {%endblock%}
