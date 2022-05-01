@@ -10,7 +10,7 @@ api_key='0264a9c2fe044a6497d9450ca0f12cc2'
 # Getting the movie base url
 # suorl = None
 suorl='https://newsapi.org/v2/top-headlines/sources?apiKey={}&pageSize=10'
-auorl=None
+auorl='https://newsapi.org/v2/top-headlines?country={}&category={}&apiKey={}'
 
 def configure_request(app):
     
@@ -19,7 +19,7 @@ def configure_request(app):
     
     # suorl = app.config['SOURCE_URL']
     
-    auorl=app.config['ARTICLE_URL']
+    # auorl=app.config['ARTICLE_URL']
 
 
 
@@ -67,3 +67,13 @@ def process(source_list):
             source_results.append(source_object)
 
     return source_results
+
+
+
+#fetching the articles
+def get_articles(country,category):
+    ariclesurl=auorl.format(country,category,api_key)
+    with urllib.request.urlopen(ariclesurl) as url:
+        jdata=url.read()
+        data= json.loads(jdata)
+        
