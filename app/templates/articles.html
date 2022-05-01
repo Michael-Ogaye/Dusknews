@@ -4,12 +4,24 @@
 {%endblock%}
 
 {%block content%}
+
+<style>
+  .maga{
+      width: 50%;
+  } 
+  
+  .un {
+      text-decoration: underline;
+  }
+
+</style>
+
 <h4 class="text-center my-3 text-primary">News Articles</h6>
-<ul>
+<ul class="bg-light py-4">
     {%for a in political%}
-    <li>
-        <p><span>{{a.title}}</span></p>
-        <img src="{{a.urlimage}}" alt="pict">
+    <li class="list-unstyled mb-5 border-bottom mx-auto py-3">
+        <p class="un"><span>{{a.title}}</span></p>
+        <img class="maga"  src="{{a.urlimage}}" alt="pict">
     </li>
 
     {%endfor%}
