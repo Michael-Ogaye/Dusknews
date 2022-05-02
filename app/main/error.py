@@ -1,11 +1,11 @@
-from flask import render_template,url_for
-from . import main
+# from flask import render_template,url_for
+# from . import main
 
-@main.app_errorhandler(404)
-def four_Ow_four(error):
-    '''
-    Function to render the 404 error page
+# @main.app_errorhandler(404)
+# def four_Ow_four(error):
+#     '''
+#     Function to render the 404 error page
 
-    '''
-    title='Not found'
-    return render_template('fourOwfour.html', title=title),404
+#     '''
+#     title='Not found'
+#     return render_template('fourOwfour.html', title=title),404
