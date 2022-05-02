@@ -1,12 +1,12 @@
 {%extends 'base.html'%}
-{{title}}
-{%block title%}
 
-{%endblock%}
+{%block title%}{{title}} {%endblock%}
+
+
 
 {%block content%}
-<h6 class="text-primary fs-2 text-center my-4">Dusk news Highlights</h6>
-<ul class="border  rounded">
+<h6 class="text-primary fs-2 text-center my-4">Highlights</h6>
+<ul class="border  rounded bg-light">
 {%for p in political%}
 <li class="list-unstyled py-5 border-bottom" >
 <h6 class="">Source:<span class="text-danger ms-2">{{p.name}}</span></h6>
