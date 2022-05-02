@@ -3,25 +3,50 @@
 {%block title%}{{title}} {%endblock%}
 
 
-
 {%block content%}
+
+
+
+<style>
+    .lot{
+        background-color: pink;
+        padding: 0.6rem;
+        border-radius: 0.6em;
+
+    }
+    a.lot{
+        text-decoration: none;
+        color: red;
+        border-radius: 2em;
+        
+        
+    }
+
+    a.lot:hover{
+        color: purple;
+        box-shadow: 2px 1px 1px ;
+        transform: scale(1.1);
+        background-color: green;
+    }
+</style>
+
 <h6 class="text-primary fs-2 text-center my-4">Highlights</h6>
 <ul class="border  rounded bg-light">
 {%for p in political%}
-<li class="list-unstyled py-5 border-bottom" >
+<li class="list-unstyled py-5 border-bottom fs-5" >
 <h6 class="">Source:<span class="text-danger ms-2">{{p.name}}</span></h6>
 
 <p class="p-5 "><strong class="text-danger">Description:</strong><span class="ms-2">{{p.description}}</span></p>
 <div class="d-flex justify-content-around bg-light rounded-pill p-2 mx-auto align-items-center">
     <div class="categ">
-        <p>category: <span>{{p.category}}</span></p>
+        <p class="lot">category: <span class="text-danger">{{p.category}}</span></p>
     </div>
     <div class="country">
-        <p>Language: <span>{{p.language}}</span></p>
+        <p class="lot">Language: <span class="text-danger">{{p.language}}</span></p>
     </div>
-    <div class="ur">
-        <a target="blank" href="{{p.url}}">visit</a>
-    </div>
+    
+        <a target="blank" href="{{p.url}}" class="d-block lot">visit</a>
+
 </div>
 </li>
 {%endfor%}
